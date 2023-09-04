@@ -16,9 +16,17 @@ function getVariantClassName(variant: Variant) {
     }
 }
 
-export default function MyButton({ children, variant, ...props }: Props) {
+export default function MyButton({
+    children,
+    variant,
+    className,
+    ...props
+}: Props) {
     return (
-        <button className={getVariantClassName(variant)} {...props}>
+        <button
+            className={`${getVariantClassName(variant)} ${className}`}
+            {...props}
+        >
             {children}
         </button>
     );
